@@ -3,15 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\Comic;
 class ResourceComicController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
-    {
-        return "ok funziona";
+    {   $data =[ "comics" => Comic::all()];
+        return view("index", $data);
     }
 
     /**
@@ -35,7 +35,11 @@ class ResourceComicController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $selectedComic =  Comic::find($id);
+        $data =[
+            "comic" => $selectedComic
+        ];
+        return view("show", $data);
     }
 
     /**
