@@ -5,8 +5,10 @@
     <h1 style="font-size: 45px">
         AGGIUNGI UN FUMETTO
     </h1>
-   <form method="POST" action="{{route('index.store')}}">
+   <form method="POST" action="{{ route('index.update', $comic->id) }}">
+    @method('PUT') 
     @csrf
+    {{$comic->id}}
         <div class="mb-3">
             <label for="exampleInputTitle" class="form-label">TITLE</label>
             <input type="text" class="form-control" id="exampleInputTitle" name="title" value="{{$comic->title}}">

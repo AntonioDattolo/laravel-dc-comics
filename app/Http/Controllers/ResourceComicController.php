@@ -73,9 +73,26 @@ class ResourceComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Comic $comic)
     {
-        //
+        $data = $request->all();
+        // dump($data);
+        
+        // Creo un nuovo Game e ne scrivo i dati
+        $comic = new Comic;
+        $comic->title = $data["title"];
+        $comic->description = $data["description"];
+        $comic->thumb = $data["thumb"];
+        $comic->price = $data["price"];
+        $comic->series = $data["series"];
+        $comic->sale_date = $data["sale_date"];
+        $comic->type =$data["type"];
+        $comic->artist = $data ["artist"];
+        $comic->writers =  $data["writers"];
+        $comic->save();
+                 
+        // redireziono sulla pagina che mostra i dettagli del gioco
+        return redirect()->route('index.show', $comic->id);
     }
 
     /**
