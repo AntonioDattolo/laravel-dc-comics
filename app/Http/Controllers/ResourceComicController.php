@@ -76,10 +76,7 @@ class ResourceComicController extends Controller
     public function update(Request $request, Comic $comic)
     {
         $data = $request->all();
-        // dump($data);
-        
-        // Creo un nuovo Game e ne scrivo i dati
-        $comic = new Comic;
+        // $comic = new Comic;
         $comic->title = $data["title"];
         $comic->description = $data["description"];
         $comic->thumb = $data["thumb"];
@@ -91,7 +88,6 @@ class ResourceComicController extends Controller
         $comic->writers =  $data["writers"];
         $comic->save();
                  
-        // redireziono sulla pagina che mostra i dettagli del gioco
         return redirect()->route('index.show', $comic->id);
     }
 
