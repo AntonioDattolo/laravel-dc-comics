@@ -27,7 +27,24 @@ class ResourceComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->all();
+        // dump($data);
+        
+        // Creo un nuovo Game e ne scrivo i dati
+        $newRecord = new Comic;
+        $newRecord->title = $data["title"];
+        $newRecord->description = $data["description"];
+        $newRecord->thumb = $data["thumb"];
+        $newRecord->price = $data["price"];
+        $newRecord->series = $data["series"];
+        $newRecord->sale_date = $data["sale_date"];
+        $newRecord->type =$data["type"];
+        $newRecord->artist = $data ["artists"];
+        $newRecord->writers =  $data["writers"];
+        $newRecord->save();
+                 
+        // redireziono sulla pagina che mostra i dettagli del gioco
+        return redirect()->route('index.show', $newRecord->id);
     }
 
     /**
@@ -35,7 +52,7 @@ class ResourceComicController extends Controller
      */
     public function show(string $id)
     {
-        $selectedComic =  Comic::find($id);
+        $selectedComic =  Comic::findOrFail($id);
         $data =[
             "comic" => $selectedComic
         ];

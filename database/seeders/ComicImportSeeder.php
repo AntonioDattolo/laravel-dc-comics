@@ -17,7 +17,7 @@ class ComicImportSeeder extends Seeder
             $index = $i;
             $newRecord = new Comic;
             $newRecord->title = $importNewCatalog["comics"][$index]["title"];
-            $newRecord->description = $importNewCatalog["comics"][$index]["description"];;
+            $newRecord->description = $importNewCatalog["comics"][$index]["description"];
             $newRecord->thumb = $importNewCatalog["comics"][$index]["thumb"];
             $newRecord->price = $importNewCatalog["comics"][$index]["price"];
             $newRecord->series = $importNewCatalog["comics"][$index]["series"];
