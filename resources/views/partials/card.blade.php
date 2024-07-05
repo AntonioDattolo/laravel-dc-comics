@@ -5,9 +5,14 @@
     <td class="w-50">{{$item['title']}}</td>
     <td>{{$item['price']}}</td>
     <td>
-        <a href="index/{{$item->id}} style="color: greenyellow; text-style:none;">
+        <a href="index/{{$item->id}}" style="color: greenyellow; text-style:none;">
             <button type="submit" style="background-color: black; color: greenyellow">
                 More details
+            </button>
+        </a> 
+        <a href="index/{{$item->id}}/edit" style="color: greenyellow; text-style:none;">
+            <button type="submit" style="background-color: black; color: greenyellow">
+                Modify
             </button>
         </a> 
     </td>
