@@ -16,8 +16,7 @@ const swiper = new Swiper('.swiper', {
     loop: true,
     effect: 'cards',
     cardsEffect: {
-      
-     
+      slideShadows :false,
     },
     // Navigation arrows
     navigation: {

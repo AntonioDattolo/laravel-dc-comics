@@ -27,7 +27,7 @@ a{
     text-decoration: none;
 }
 .swiper {
-    width: 80%;
+    max-width: 100%;
     height: 550px;
     overflow: hidden;
 }
@@ -44,4 +44,13 @@ img{
     background-image: url(../../public/img/dc-logo-bg.png);
     background-repeat: no-repeat;
     background-position: right;
+}
+.myBg{
+    background-image: url(../../public/img/footer-bg.jpg);
+}
+.footerBG{
+    background-image: url(../../public/img/dc-logo-bg.png);
+    background-repeat: no-repeat;
+    background-size: 65%;
+    background-position: center;
 }
