@@ -1,10 +1,10 @@
 @extends('layouts.app')
-
 @section('content')
-<section class="container text-center">
-    <h1 style="font-size: 45px">
-        <a href="/index">Lista COMICS</a>
-    </h1>
-    <img class="my-3" src="https://gizmodo.com/app/uploads/2022/03/4850d2dc11bba95cd15d04db2b0038ba.gif" alt="">
+
+@include('partials.jumbotron')
+<section class="container text-center my-1">
+    <h2 style="font-size: 45px">
+        <a class="badge rounded-pill text-bg-primary" href="/comic">Lista COMICS</a>
+    </h2>
 </section>
 @endsection

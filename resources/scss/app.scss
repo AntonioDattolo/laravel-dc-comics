@@ -2,12 +2,12 @@
 
 body {
     font-family: sans-serif;
-    background: #222;
-    color: white;
+    background: #111;
+    // color: white;
     color: whitesmoke;
-     background-image: url(https://www.gifimili.com/gif/2018/03/la-matrice.gif);
-     background-repeat: no-repeat;
-    background-size: cover;
+    //  background-image: url(https://www.gifimili.com/gif/2018/03/la-matrice.gif);
+    //  background-repeat: no-repeat;
+    // background-size: cover;
     font-family: 'Figtree';
     font-style: normal;
     font-weight: 400;
@@ -25,4 +25,23 @@ body {
 a{
     color: whitesmoke;
     text-decoration: none;
+}
+.swiper {
+    width: 80%;
+    height: 550px;
+    overflow: hidden;
+}
+img{
+    height: 100%;
+}
+#jumbo{
+    height: 450px;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 1.5rem;
+}
+#show{
+    background-image: url(../../public/img/dc-logo-bg.png);
+    background-repeat: no-repeat;
+    background-position: right;
 }

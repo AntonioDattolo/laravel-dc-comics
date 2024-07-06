@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<section class="container d-flex flex-wrap">
+<section class="container d-flex flex-wrap" id="show">
     <h1 class="col-12 text-center p-1">
         {{$comic['title']}}
     </h1>

@@ -5,7 +5,7 @@
     <h1 style="font-size: 45px">
         AGGIUNGI UN FUMETTO
     </h1>
-   <form method="POST" action="{{route('index.store')}}">
+   <form method="POST" action="{{route('comic.store')}}">
     @csrf
         <div class="mb-3">
             <label for="exampleInputTitle" class="form-label">TITLE</label>
@@ -44,7 +44,7 @@
             <input type="text" class="form-control" id="exampleInputWriters" name="writers">
         </div>
     
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary">ADD</button>
     </form>
     
 </section>

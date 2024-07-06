@@ -44,7 +44,7 @@ class ResourceComicController extends Controller
         $newRecord->save();
                  
         // redireziono sulla pagina che mostra i dettagli del gioco
-        return redirect()->route('index.show', $newRecord->id);
+        return redirect()->route('comic.show', $newRecord->id);
     }
 
     /**
@@ -73,22 +73,22 @@ class ResourceComicController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Comic $index)
+    public function update(Request $request, Comic $comic)
     {
         $data = $request->all();
         // $comic = new Comic;
-        $index->title = $data["title"];
-        $index->description = $data["description"];
-        $index->thumb = $data["thumb"];
-        $index->price = $data["price"];
-        $index->series = $data["series"];
-        $index->sale_date = $data["sale_date"];
-        $index->type =$data["type"];
-        $index->artist = $data ["artist"];
-        $index->writers =  $data["writers"];
-        $index->save();
+        $comic->title = $data["title"];
+        $comic->description = $data["description"];
+        $comic->thumb = $data["thumb"];
+        $comic->price = $data["price"];
+        $comic->series = $data["series"];
+        $comic->sale_date = $data["sale_date"];
+        $comic->type =$data["type"];
+        $comic->artist = $data ["artist"];
+        $comic->writers =  $data["writers"];
+        $comic->save();
                  
-        return redirect()->route('index.show', $index->id);
+        return redirect()->route('comic.show', $comic->id);
     }
 
     /**

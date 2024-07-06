@@ -5,7 +5,7 @@
     <h1 style="font-size: 45px">
         AGGIUNGI UN FUMETTO
     </h1>
-   <form method="POST" action="{{ route('index.update', $comic->id) }}">
+   <form method="POST" action="{{ route('comic.update', $comic->id) }}">
     @method('PUT') 
     @csrf
     {{$comic->id}}
