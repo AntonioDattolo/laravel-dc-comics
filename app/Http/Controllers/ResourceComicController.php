@@ -75,17 +75,32 @@ class ResourceComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        $data = $request->all();
-        // $comic = new Comic;
-        $comic->title = $data["title"];
-        $comic->description = $data["description"];
-        $comic->thumb = $data["thumb"];
-        $comic->price = $data["price"];
-        $comic->series = $data["series"];
-        $comic->sale_date = $data["sale_date"];
-        $comic->type =$data["type"];
-        $comic->artist = $data ["artist"];
-        $comic->writers =  $data["writers"];
+        $data = $request->validate([
+            "title" => "required",
+            "description" => "required",
+            "thumb" => "required",
+            "price" => "required|max:999,99",
+            "series" => "required",
+            "sale_date" => "required|date_format:Y-m-d",
+            "type" => "required",
+            "artist" => "required",
+            "writers" => "required",
+        ]);
+        
+        $comic = new Comic;
+        $comic->fill($data);
+
+        // $data = $request->all();
+        // // $comic = new Comic;
+        // $comic->title = $data["title"];
+        // $comic->description = $data["description"];
+        // $comic->thumb = $data["thumb"];
+        // $comic->price = $data["price"];
+        // $comic->series = $data["series"];
+        // $comic->sale_date = $data["sale_date"];
+        // $comic->type =$data["type"];
+        // $comic->artist = $data ["artist"];
+        // $comic->writers =  $data["writers"];
         $comic->save();
                  
         return redirect()->route('comic.show', $comic->id);
